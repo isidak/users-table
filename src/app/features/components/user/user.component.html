@@ -1,0 +1,89 @@
+<th class="w-auto max-w-2 px-4 py-2">{{ user.id }}</th>
+<th class="w-full min-w-10 lg:w-auto px-4 py-2 sm:w-auto">
+  {{ user.name }}
+  <dl class="sm:hidden">
+    <dt class="sm:hidden sr-only mt-1">City - Country</dt>
+    <dd class="sm:hidden text-xs/3 font-medium text-gray-500 mt-1 truncate">
+      {{ user.city }} - {{ user.country }}
+    </dd>
+  </dl>
+</th>
+<th class="w-auto px-4 py-2">
+  {{ user.dateOfBirth.toString() | date : "dd/mm/yyyy" }}
+</th>
+<th class="w-auto hidden sm:table-cell px-4 py-2">{{ user.city }}</th>
+<th class="w-auto hidden sm:table-cell px-4 py-2">{{ user.country }}</th>
+<th class="hidden sm:table-cell w-auto px-4 py-2 sm:ta">
+  <button
+    class="text-green-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+    type="button"
+  >
+    <fa-icon [icon]="faPen"></fa-icon>
+  </button>
+</th>
+<th class="hidden sm:table-cell w-auto px-4 py-2">
+  <button
+    class="text-red-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+    type="button"
+  >
+    <fa-icon [icon]="faTrash"></fa-icon>
+  </button>
+</th>
+
+<!-- <div class="relative bg-gray-100 flex items-center justify-center">
+    <button
+      (click)="showButtons = !showButtons"
+      class="text-gray-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1"
+    >
+      ..
+    </button>
+    <div
+      class="absolute hidden  left-0 text-left min-w-[160px] min-h-[160px] bg-white border border-gray-300 rounded-lg shadow-lg z-1"
+      [ngClass]="{ 'inline-block': showButtons, hidden: !showButtons }"
+    >
+      <button
+        class="text-green-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button"
+      >
+        <fa-icon [icon]="faPen"></fa-icon>
+      </button>
+      <button
+        class="text-red-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        type="button"
+      >
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </button>
+    </div>
+  </div> -->
+<th class="sm:hidden">
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          type="button "
+          class="text-gray-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          ..
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button
+            ngbDropdownItem
+            class="text-green-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            type="button"
+          >
+            <fa-icon [icon]="faPen"></fa-icon>
+          </button>
+          <button
+            ngbDropdownItem
+            class="text-red-500 background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            type="button"
+          >
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</th>
